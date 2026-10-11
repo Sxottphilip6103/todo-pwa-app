@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#4f46e5" />
+    <meta
+      name="description"
+      content="A PWA to-do app with offline support and local storage."
+    />
+    <title>Todo PWA</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="icons/icon-192.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <h1>Todo PWA</h1>
+        <button id="installBtn" class="install-btn hidden">Install App</button>
+      </header>
+
+      <form id="todoForm" class="todo-form">
+        <input
+          id="todoInput"
+          type="text"
+          placeholder="Add a task..."
+          aria-label="Add a task"
+          autocomplete="off"
+          required
+        />
+        <button type="submit">Add</button>
+      </form>
+
+      <div class="toolbar">
+        <div class="filters" aria-label="Filter tasks">
+          <button class="filter active" data-filter="all" type="button">All</button>
+          <button class="filter" data-filter="active" type="button">Active</button>
+          <button class="filter" data-filter="completed" type="button">Completed</button>
+        </div>
+        <button id="clearCompleted" class="clear-btn" type="button">Clear Completed</button>
+      </div>
+
+      <ul id="todoList" class="todo-list" aria-live="polite"></ul>
+
+      <footer class="stats">
+        <span id="remainingCount">0 tasks left</span>
+        <span id="totalCount">0 total</span>
+      </footer>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
